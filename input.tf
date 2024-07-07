@@ -17,6 +17,11 @@ variable "routing_mode" {
 }
 
 variable "mtu" {
-  type = number
+  type    = number
   default = 1460
+}
+
+variable "description" {
+  type    = string
+  default = null
 }
