@@ -15,3 +15,8 @@ variable "routing_mode" {
   type    = string
   default = "REGIONAL"
 }
+
+variable "mtu" {
+  type = number
+  default = 1460
+}
