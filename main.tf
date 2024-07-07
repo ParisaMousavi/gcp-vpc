@@ -6,3 +6,10 @@ resource "google_compute_network" "this" {
   mtu                     = var.mtu
   description             = var.description
 }
+
+resource "google_compute_subnetwork" "this" {
+  for_each      = var.subnets
+  name          = "${var.name}-${each.key}"
+  ip_cidr_range = each.value.ip_cidr_range
+  network       = google_compute_network.this.id
+}

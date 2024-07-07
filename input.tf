@@ -25,3 +25,9 @@ variable "description" {
   type    = string
   default = null
 }
+
+variable "subnets" {
+  type = map(object({
+    ip_cidr_range = string
+  }))
+}
